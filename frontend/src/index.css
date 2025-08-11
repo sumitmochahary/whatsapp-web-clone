@@ -1,1 +1,27 @@
+/* src/index.css */
 @import "tailwindcss";
+/* @plugin "@tailwindcss/forms"; */
+
+@layer base {
+    :root {
+        --color-bg: 255 255 255;
+        /* white */
+        --color-fg: 17 24 39;
+        /* gray-900 */
+    }
+
+    html.dark {
+        --color-bg: 17 24 39;
+        /* gray-900 */
+        --color-fg: 243 244 246;
+        /* gray-100 */
+    }
+}
+
+/* Tailwind 4.x uses CSS variables, so we map them */
+@layer base {
+    body {
+        background-color: rgb(var(--color-bg));
+        color: rgb(var(--color-fg));
+    }
+}
